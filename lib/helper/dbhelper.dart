@@ -41,7 +41,7 @@ class DbHelper {
 
   Future<List<Map<String, dynamic>>> select() async {
     Database db = await this.initDb();
-    var mapList = await db.query('item', orderBy: 'name');
+    var mapList = await db.query('item', orderBy: 'kodeBarang');
     return mapList;
   }
 

@@ -5,6 +5,7 @@ import 'package:sqllite/pages/entryForm.dart';
 import 'package:flutter/material.dart';
 import '../model/item.dart';
 
+
 class Home extends StatefulWidget {
   @override
   HomeState createState() => HomeState();
@@ -59,7 +60,7 @@ class HomeState extends State<Home> {
   }
 
   ListView createListView() {
-    TextStyle textStyle = Theme.of(context).textTheme.headline5;
+    //TextStyle textStyle = Theme.of(context).textTheme.headline5;
     return ListView.builder(
       itemCount: count,
       itemBuilder: (buildContext, int index) {
