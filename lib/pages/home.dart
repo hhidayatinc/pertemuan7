@@ -15,9 +15,12 @@ class HomeState extends State<Home> {
   DbHelper dbHelper = DbHelper();
   int count = 0;
   List<Item> itemList;
-  void initState()=> updateListView();
+  
   @override
-
+  void initState(){
+    super.initState();
+    updateListView();
+  }
   //build diambil berulang ulang tergantung statenya
   Widget build(BuildContext context) {
     if (itemList == null) {
