@@ -15,7 +15,10 @@ class HomeState extends State<Home> {
   DbHelper dbHelper = DbHelper();
   int count = 0;
   List<Item> itemList;
+  void initState()=> updateListView();
   @override
+
+  //build diambil berulang ulang tergantung statenya
   Widget build(BuildContext context) {
     if (itemList == null) {
       // ignore: deprecated_member_use
@@ -91,13 +94,20 @@ class HomeState extends State<Home> {
                 )
               ],
             ),
-            subtitle: Column(
+            subtitle: Row(
                crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   padding: EdgeInsets.only(top: 5),
                   child: Text(
                     "Rp " + this.itemList[index].price.toString(),
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Text(
+                    "; Stok: " + this.itemList[index].stok.toString(),
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
                   ),
                 ),
